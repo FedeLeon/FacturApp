@@ -1,0 +1,132 @@
+/*--------------HEADER------------*/
+
+/* Estilo para el encabezado de la página */
+header {
+    background-color: #3b5998;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para la lista de elementos de navegación */
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  /* Estilo para los elementos de la lista de navegación */
+  nav li {
+    margin: 0 10px;
+  }
+  
+  /* Estilo para los botones de enlace */
+  nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Estilo para los botones de enlace al pasar el cursor sobre ellos */
+  nav li a:hover {
+    background-color: #fff;
+    color: #3b5998;
+  }
+  
+  /* Estilo para el contenido principal de la página */
+  main {
+    padding: 20px;
+  }
+  
+  /* Estilo para el pie de página de la página */
+  footer {
+    background-color: #e9ebee;
+    padding: 20px;
+  }
+  
+
+/*------------------FACTURA--------------*/
+
+/* Estilo de botón */
+button {
+  background-color: #3b5998;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilo de input */
+input[type="text"] {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Estilo de tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 8px;
+  line-height: 1.42857;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+table th {
+  font-weight: bold;
+  text-align: left;
+  background-color: #f5f5f5;
+}
+
+/* Estilo de la factura */
+#factura {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  margin-top: 20px;
+}
+
+#factura h2 {
+  margin-top: 0;
+}
+
+#factura p {
+  margin-top: 10px;
+}
+
+#factura table {
+  margin-top: 20px;
+}
+
+#factura hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+#factura p strong {
+  font-weight: bold;
+}
+
+#factura td:last-child, #factura th:last-child {
+  text-align: right;
+}
+
+#factura tbody td:nth-child(2), #factura tbody td:last-child {
+  font-weight: bold;
+}

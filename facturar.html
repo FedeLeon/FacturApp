@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./registroCliente.html">Registrar cliente</a></li>
+          <li><a href="facturar.html">Facturar</a></li>
+          <li><a href="pagina3.html">Salir</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <input type="text" id="buscarInput" />
+    <button onclick="buscarPersona()">Buscar</button>
+
+      <div id="factura">
+        <h2>Factura Electrónica</h2>
+        <p id="cliente">Cliente:</p>
+        <p id="dni">DNI: </p>
+        <p id="razon-social">Razón social: </p>
+        <p id="direccion">Dirección:</p>
+        <p id="ciudad">Ciudad:</p>
+        <p id="provincia">Provincia:</p>
+        <p id="codigo-postal">Código postal:</p>
+      
+      <hr />
+      <table>
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio unitario</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Producto A</td>
+            <td>2</td>
+            <td>$100</td>
+            <td>$200</td>
+          </tr>
+          <tr>
+            <td>Producto B</td>
+            <td>1</td>
+            <td>$50</td>
+            <td>$50</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <p><strong>Total:</strong> $250</p>
+    </div>
+  </body>
+  <script src="facturar.js"></script>
+</html>
