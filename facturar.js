@@ -3,6 +3,7 @@ const clientes = [
     "cliente": "Juan",
     "dni": "12345678",
     "razonSocial": "Mi empresa S.A.",
+    "cuit": "123456789",
     "direccion": "Av. Siempre Viva 123",
     "ciudad": "Buenos Aires",
     "provincia": "Buenos Aires",
@@ -12,6 +13,7 @@ const clientes = [
     "cliente": "Maria",
     "dni": "87654321",
     "razonSocial": "Otra empresa S.A.",
+    "cuit": "123456788",
     "direccion": "Calle Falsa 123",
     "ciudad": "Córdoba",
     "provincia": "Córdoba",
@@ -21,6 +23,7 @@ const clientes = [
     "cliente": "Pedro",
     "dni": "45678901",
     "razonSocial": "La empresa de Pedro",
+    "cuit": "123456787",
     "direccion": "Av. del Parque 456",
     "ciudad": "Rosario",
     "provincia": "Santa Fe",
@@ -37,10 +40,30 @@ const ciudad = document.getElementById('ciudad');
 const provincia = document.getElementById('provincia');
 const codigoPostal = document.getElementById('codigo-postal');
 
-function buscarPersona() {
-  const buscar = document.getElementById('buscarInput').value; // Obtiene el valor del input
-  const personaEncontrada = clientes.find(cliente => cliente.cliente === buscar); // Busca la persona que tenga el nombre buscado y guarda la info en una variable
+//CAPTURAR LA OPCION ELEGIDA EN EL SELECT
+const select = document.getElementById("opciones");
+let opcionSeleccionada = select.value;
 
+select.addEventListener("change", function() {
+  opcionSeleccionada = select.value;
+});
+
+//FUNCION PARA BUSCAR SEGUN LA OPCION SELECCIONADA DEL SELECT ANTERIOR
+
+function buscarPorPropiedad(array, propiedad, valor) {
+  const resultados = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][propiedad] === valor) {
+      return array[i];
+    }
+}
+}
+
+function buscarPersona() {
+  
+    let inputValor = document.getElementById('buscarInput').value; // Obtiene el valor del input
+    const personaEncontrada = buscarPorPropiedad(clientes,opcionSeleccionada,inputValor)
+  
   if (personaEncontrada) {
     //REEMPLAZAR CADA CAMPO DE LA FACTURA POR LA INFORMACION ENCONTRADA
       cliente.innerHTML = `<strong>Cliente:</strong>${personaEncontrada.cliente}`;
@@ -55,7 +78,4 @@ function buscarPersona() {
     alert("Cliente no encontrado");
   }
 }
-
-
-
 

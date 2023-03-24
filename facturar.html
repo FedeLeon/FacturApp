@@ -4,34 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./facturar.css"/>
     <title>Document</title>
   </head>
+
   <body>
     <header>
       <nav>
-        <ul>
-          <li><a href="./index.html">Inicio</a></li>
-          <li><a href="./registroCliente.html">Registrar cliente</a></li>
-          <li><a href="facturar.html">Facturar</a></li>
-          <li><a href="pagina3.html">Salir</a></li>
-        </ul>
+        <a href="index.html" class="">Inicio</a>
+        <a href="#">Facturación</a>
+        <a href="formulario.html" class="active">Registrar clientes</a>
+        <a href="#">Maestro de clientes</a>
+        <a href="#">Listado de ventas</a>
       </nav>
     </header>
 
-    <input type="text" id="buscarInput" />
-    <button onclick="buscarPersona()">Buscar</button>
+    <div class="buscador">
+      <label for="opciones">Buscar por:</label>
+      <select id="opciones">
+        <option value="cliente">Cliente</option>
+        <option value="dni">DNI</option>
+        <option value="cuit">CUIT</option>
+        <option value="razonSocial">Razón Social</option>
+      </select>
 
-      <div id="factura">
-        <h2>Factura Electrónica</h2>
-        <p id="cliente">Cliente:</p>
-        <p id="dni">DNI: </p>
-        <p id="razon-social">Razón social: </p>
-        <p id="direccion">Dirección:</p>
-        <p id="ciudad">Ciudad:</p>
-        <p id="provincia">Provincia:</p>
-        <p id="codigo-postal">Código postal:</p>
-      
+      <input type="text" id="buscarInput" />
+      <button onclick="buscarPersona()">Buscar</button>
+    </div>
+
+    <div id="factura">
+      <h2>Factura Electrónica</h2>
+      <p id="cliente">Cliente:</p>
+      <p id="dni">DNI:</p>
+      <p id="razon-social">Razón social:</p>
+      <p id="direccion">Dirección:</p>
+      <p id="ciudad">Ciudad:</p>
+      <p id="provincia">Provincia:</p>
+      <p id="codigo-postal">Código postal:</p>
+
       <hr />
       <table>
         <thead>

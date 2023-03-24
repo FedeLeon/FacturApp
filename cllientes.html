@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="clientes.css">
+    <title>FactureApp</title>
+</head>
+<body>
+    <header>
+		<nav>
+			<a href="index.html" class="">Inicio</a>
+			<a href="#">Facturación</a>
+			<a href="formulario.html" class="active">Registrar clientes</a>
+			<a href="#">Maestro de clientes</a>
+			<a href="#">Listado de ventas</a>
+		</nav>
+	</header>
+
+    <form>
+
+		<label for="nombre">Nombre y Apellido:</label>
+		<input type="text" id="nombre" name="nombre" required>
+
+		<label for="cuit">CUIT o DNI:</label>
+		<input type="text" id="cuit-dni" name="cuit-dni" required>
+
+		<label for="razon-social">Razón social:</label>
+		<input type="text" id="razon-social" name="razon-social" required>
+
+		<label for="direccion">Direccion:</label>
+		<input type="text" id="direccion" name="direccion" required>
+
+		<label for="provincia">Provincia:</label>
+		<input type="text" id="provincia" name="provincia" required>
+
+        <label for="codigo-postal">Código postal:</label>
+		<input type="number" id="codigo-postal" name="codigo-postal" required>
+
+		<label for="telefono">Telefono:</label>
+		<input type="number" id="telefono" name="telefono" required>
+
+		<label>Tipo de contribuyente:</label>
+		<input type="checkbox" id="monotributo" name="tipo-contribuyente[]" value="monotributo" onclick="exclusivo(this)">
+		<label for="monotributo">Monotributo</label>
+
+		<input type="checkbox" id="inscripto" name="tipo-contribuyente[]" value="inscripto" onclick="exclusivo(this)">
+		<label for="inscripto">Inscripto</label>
+
+		<input type="checkbox" id="excento" name="tipo-contribuyente[]" value="excento" onclick="exclusivo(this)">
+		<label for="excento">Excento</label>
+
+		<input type="checkbox" id="consumidor-final" name="tipo-contribuyente[]" value="consumidor-final" onclick="exclusivo(this)">
+		<label for="consumidor-final">Consumidor final</label>
+
+		<button type="submit">Enviar</button>
+	</form>
+
+
+	<script src="./clientes.js"></script>	
+</body>
+</html>
