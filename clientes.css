@@ -1,63 +1,97 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #0072C6;
-    box-sizing: border-box;
+
+.navbar a.btn-primary {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+  }
+  
+  .navbar a.btn-primary:hover {
+        background-color: #0f2640;
+        color: white;
+        border-color: transparent;
+      }
+    
+  
+  *{
+    font-family: 'Readex Pro', sans-serif;
+    
+  }
+  
+  .inputxt {
+    border-radius: 8px;
+  }
+  
+  body {
+    background-color: #c1eef6;  
+  }
+  
+  .seleccionado {
+    background-color: #0f2640 !important;
+    color: white;
+    border-color: transparent;
+  }
+
+  .form-control::placeholder {
+    color: #ccc;
+  }
+
+/*--------BOTONES DE REGISTRO Y MODIFICAR ----------*/
+
+.cuadro-boton-activo{
+  padding: 2px;
+  border: 3px solid black;
+  border-radius: 30px;
+  padding: 0 ;
+  background: #0f2640;
 }
-form {
-    color: rgba(0, 0, 0, 0.664);
-    background-color: #F5F5F5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
-    max-width: 600px;
-    margin: 50px auto;
+
+.boton-cl{
+  padding: 100px;
+  border-radius: 30px;
+  background: #778da9;
+  position: relative;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+  box-shadow: 10px 10px 10px rgba(3 , 30, 72, .4);
+  margin: 0;
 }
-input[type="text"],
-input[type="email"],
-input[type="number"] {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #FFFFFF;
-    box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.1);
-    box-sizing: border-box;
-    font-size: 16px;
+
+.boton-cl:hover{
+  background: #0f2640;
+  color: #778da9;
+  transition: .5s;
 }
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 14px;
-}
-input[type="checkbox"],
-label[for="monotributo"],
-label[for="inscripto"],
-label[for="excento"],
-label[for="consumidor-final"] {
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 10px;
+
+.agregar-cliente{
+  position:absolute;
+  z-index: 100;
+  right: 35%;
+  bottom: 10%;
+  font-size: 80px;
+  
 }
 
 
-button[type="submit"] {
-    display: block;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: #0078D7;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
-    transition: background-color 0.2s ease-in-out;
+.modificar-cliente{
+  position:absolute;
+  z-index: 100;
+  right: 35%;
+  bottom: 10%;
+  font-size: 80px;
 }
-button[type="submit"]:hover {
-    background-color: #0060A8;
+
+button > p {
+  position: relative;
+  bottom: 50px;
+}
+
+/*-------- Estilos para eventos de formulario y botones --------------*/
+
+.formulario_inactivo{
+  display:none;
+}
+
+.formulario_activo{
+  font-display: block;
 }

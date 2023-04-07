@@ -7,7 +7,10 @@ const clientes = [
     "direccion": "Av. Siempre Viva 123",
     "ciudad": "Buenos Aires",
     "provincia": "Buenos Aires",
-    "codigoPostal": "1234"
+    "codigoPostal": "1234",
+    "tel":  "89653213",
+    "email" : "elculopelado@gmail.com",
+    "cat" : "a"
   },
   {
     "cliente": "Maria",
@@ -17,7 +20,10 @@ const clientes = [
     "direccion": "Calle Falsa 123",
     "ciudad": "Córdoba",
     "provincia": "Córdoba",
-    "codigoPostal": "5678"
+    "codigoPostal": "5678",
+    "tel":  "89653213",
+    "email" : "elculopelado@gmail.com",
+    "cat" : "b"
   },
   {
     "cliente": "Pedro",
@@ -27,18 +33,21 @@ const clientes = [
     "direccion": "Av. del Parque 456",
     "ciudad": "Rosario",
     "provincia": "Santa Fe",
-    "codigoPostal": "9012"
+    "codigoPostal": "9012",
+    "tel":  "89653213",
+    "email" : "elculopelado@gmail.com",
+    "cat" : "c"
   }
 ]
 
-//CAPTURAR CADA CAMPO DE LA FACTURA ELECTRONICA
+/* //CAPTURAR CADA CAMPO DE LA FACTURA ELECTRONICA
 const cliente = document.getElementById('cliente');
 const dni = document.getElementById('dni');
 const razonSocial = document.getElementById('razon-social');
 const direccion = document.getElementById('direccion');
 const ciudad = document.getElementById('ciudad');
 const provincia = document.getElementById('provincia');
-const codigoPostal = document.getElementById('codigo-postal');
+const codigoPostal = document.getElementById('codigo-postal'); */
 
 //CAPTURAR LA OPCION ELEGIDA EN EL SELECT
 const select = document.getElementById("opciones");
@@ -66,16 +75,34 @@ function buscarPersona() {
   
   if (personaEncontrada) {
     //REEMPLAZAR CADA CAMPO DE LA FACTURA POR LA INFORMACION ENCONTRADA
-      cliente.innerHTML = `<strong>Cliente:</strong>${personaEncontrada.cliente}`;
-      dni.innerHTML = `<strong>DNI:</strong>${personaEncontrada.dni}`;
-      razonSocial.innerHTML = `<strong>Razon Social:</strong>${personaEncontrada.razonSocial}`;
-      direccion.innerHTML = `<strong>Direccion:</strong>${personaEncontrada.direccion}`;
-      ciudad.innerHTML = `<strong>Ciudad:</strong>${personaEncontrada.ciudad}`;
-      provincia.innerHTML = `<strong>Provincia:</strong>${personaEncontrada.provincia}`;
-      codigoPostal.innerHTML = `<strong>Codigo Postal:</strong>${personaEncontrada.codigoPostal}`;
+    const cuit = document.getElementById("cuit")
+    const persona = document.getElementById("persona")
+    const categoria = document.getElementById("categoria")
+    const domicilio = document.getElementById("domicilio")
+    const telefono = document.getElementById("telefono")
+    const mail = document.getElementById("mail")
+
+
+    cuit.value = `${personaEncontrada.cuit}`
+    persona.value = `${personaEncontrada.cliente}`
+    domicilio.value = `${personaEncontrada.direccion}`
+    telefono.value = `${personaEncontrada.tel}`
+    mail.value = `${personaEncontrada.email}`
+    if(personaEncontrada.cat === "a") {
+      categoria.value = "Monotributista";
+    } else if (personaEncontrada.cat === "b"){
+      categoria.value = "Consumidor Final";
+    } else if (personaEncontrada.cat === "c"){
+      categoria.value = "Responsable Inscripto"
+    };
+    
 
   } else {
-    alert("Cliente no encontrado");
+    Swal.fire(
+      'Cliente no encontrado :(',
+      'Revisa bien pelotudo',
+      'question'
+    );
   }
 }
 

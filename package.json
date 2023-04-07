@@ -1,12 +1,15 @@
 {
-  "name": "facturapp",
+  "name": "proyectofacture-main",
   "version": "1.0.0",
-  "description": "facturapp",
-  "main": "clientes.js",
+  "description": "",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.19.1"
+  }
 }

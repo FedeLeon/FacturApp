@@ -1,0 +1,36 @@
+
+.navbar a.btn-primary {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+  }
+  
+  .navbar a.btn-primary:hover {
+        background-color: #0f2640;
+        color: white;
+        border-color: transparent;
+      }
+    
+  
+  *{
+    font-family: 'Readex Pro', sans-serif;
+    
+  }
+  
+  .inputxt {
+    border-radius: 8px;
+  }
+  
+  body {
+    background-color: #c1eef6;  
+  }
+  
+  .seleccionado {
+    background-color: #0f2640 !important;
+    color: white;
+    border-color: transparent;
+  }
+
+  .form-control::placeholder {
+    color: #ccc;
+  }

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="articulos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet">
+  <title>FactureApp</title>
+</head>
+
+<body>
+  <!--NAVEGADOR-->
+  <header>
+    <nav class="mb-5 row navbar" style="background-color: #1d3557;">
+
+      <div class="col text-start">
+        <img src="https://i.postimg.cc/RhbLvFSb/logo.png" class="m-2 start img-fluid" style="max-height: 50px;" alt="">
+      </div>
+
+      <div class="col text-center">
+        <div>
+          <a class="seleccionado btn btn-primary mx-4" href="articulos.html">Artículos</a>
+          <a class="btn btn-primary mx-4" href="facturar.html">Facturación</a>
+          <a class="btn btn-primary mx-4" href="clientes.html">Clientes</a>
+        </div>
+      </div>
+
+      <div class="col text-end">
+        <div>
+          <a class="btn" style="color: aliceblue;" href="">Usuario</a>
+          <img src="https://i.postimg.cc/vmL7cX8n/userwhite.png" class="m-2" style="max-height: 50px;" alt="">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+
+  <div class="row">
+
+    <div class="col-2 text-center p-4">
+      <div style="background-color: black;">
+        <p style="color: aliceblue;">Publicidad</p>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="col-8">
+
+
+
+      <div class="p-2 mb-2" style="background-color: #1d3557; border-radius: 5px;">
+        <h2 class="text-center" style="color: aliceblue;">Agregar artículo</h2>
+      </div>
+
+
+      <div class="card-body text-center" style="background-color: #778da9; color: aliceblue;">
+
+
+        <div class="p-3">
+          <label for="opciones">Buscar por:</label>
+          <select id="opciones">
+            <option value="codigo">Codigo</option>
+            <option value="name">Nombre</option>
+          </select>
+
+          <input type="text" class="inputxt" id="buscarInput" />
+          <button onclick="buscarItem()" class="mx-3 btn btn-light">Buscar</button>
+        </div>
+
+        <div id="result"></div>
+
+
+        <div class="formulario">
+          <form>
+
+
+            <div class="p-2 row">
+
+              <div class="col-xl-2">
+                <div><label class="py-1 form-label fs-5" for="Codigo">Codigo:</label>
+                  <input class="form-control" type="text" id="codigo" name="codigo" required>
+                </div>
+              </div>
+
+              <div class="col-xl-3">
+                <div><label class="py-1 form-label fs-5" for="nombre">Nombre de articulo:</label>
+                  <input class="form-control" type="text" id="nombre" name="nombre" required>
+                </div>
+              </div>
+
+              <div class="col-xl-4 ">
+                <div><label class="py-1 form-label fs-5" for="descripcion">Descripcion:</label>
+                  <input class="form-control" type="text" id="descripcion" name="descripcion" required>
+                </div>
+              </div>
+
+              <div class="col-xl-2 ">
+                <div><label class="py-1 form-label fs-5" for="precio">Precio:</label>
+                  <input class="form-control" type="number" id="precio" name="precio" required>
+                </div>
+              </div>
+
+              <div class="col-xl-1">
+                <div><label class="py-1 form-label fs-5" for="cantidad">Cant:</label>
+                  <input class="form-control" type="text" id="cantidad" name="cantidad" required>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div><button type="submit" class=" m-4 col btn btn-success">Agregar</button></div>
+
+
+        </div>
+
+
+        </form>
+
+
+      </div>
+    </div>
+
+
+
+
+    <div id="factura">
+      <h2>Factura Electrónica</h2>
+      <p id="nombreItem">Nombre :</p>
+      <p id="precioItem">precio: </p>
+      <p id="cantidadItem">cantidad: </p>
+      <p id="descripcionItem">descripcion:</p>
+      <p id="codigoItem">codigo:</p>
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+  <div class="col-2 text-center p-4">
+    <div style="background-color: black;">
+      <p style="color: aliceblue;">Publicidad</p>
+    </div>
+  </div>
+
+
+
+  </div>
+
+  <script src="./articulos.js"></script>
+  <script type="module">
+
+    //IMPORTS DE FIREBASE
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+    import { getDatabase, ref, child, get, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+  
+    //CONFIG DE FIREBASE
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyAh0qag4mlcWHTEKAYUDzkTZ2760jQ_6hc",
+      authDomain: "facturapp-14d1f.firebaseapp.com",
+      databaseURL: "https://facturapp-14d1f-default-rtdb.firebaseio.com/",
+      projectId: "facturapp-14d1f",
+      storageBucket: "facturapp-14d1f.appspot.com",
+      messagingSenderId: "76841054213",
+      appId: "1:76841054213:web:61f1eb98db211472c56c6c",
+      measurementId: "G-6X880N7P32"
+    };
+  
+    // INICIALIZO FIREBASE
+  
+    const app = initializeApp(firebaseConfig);
+
+    //GET A LA BASE DE DATOS
+    const dbRef = ref(getDatabase(app));
+    get(child(dbRef, `/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+    console.log(snapshot.val());
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      });
+
+  //GUARDAR ARTCICULO
+
+  let articuloId = 1
+      function writeUserData(valor, articuloID) {
+          const db = getDatabase(app);
+          set(ref(db, 'articulos/'+ articuloID), {
+           articulo: valor,
+           id: articuloId
+          });
+        }
+
+  writeUserData("lapiz", "1")
+  writeUserData("goma", "2")
+  writeUserData("chorizo", "3")
+  writeUserData("murcielago", "4")
+
+  </script>
+</body>
+
+</html>
